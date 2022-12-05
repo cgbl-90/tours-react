@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import Loading from "./Loading";
 import Tour from "./Tour";
+import "./sass/App.css";
 
 export default function Tours() {
   let [isFetch, setIsFetch] = useState(false);
   let [toursData, setToursData] = useState([]);
   let url = "https://course-api.com/react-tours-project";
-
-  function removeTour(id) {
-    setToursData(toursData.filter((tour) => tour.id !== id));
-  }
 
   const fetchTours = async () => {
     await (
@@ -28,9 +25,8 @@ export default function Tours() {
   }, []);
 
   if (!isFetch) return <Loading />;
-  if (isFetch) {
-    if (toursData.length !== 0)
-      return <Tour props={toursData} removeTour={removeTour} />;
+  else {
+    if (toursData.length !== 0) return <Tour props={toursData} />;
     else
       return (
         <div className="container">

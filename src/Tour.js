@@ -1,4 +1,9 @@
-export default function Tour(props, removeTour) {
+import { useState } from "react";
+import "./sass/App.css";
+
+export default function Tour(props) {
+  const [readMore, setReadMore] = useState(false);
+
   return (
     <div className="container">
       {props.props.map((tour) => {
@@ -10,7 +15,6 @@ export default function Tour(props, removeTour) {
               <h4>{tour.name}</h4>
               <p>{tour.info}</p>
             </span>
-            <button onClick={removeTour}> NOT INTERESTED </button>
           </article>
         );
       })}

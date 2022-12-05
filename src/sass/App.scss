@@ -66,6 +66,20 @@ article {
     border-color: cadetblue;
   }
 
+  .link,
+  .link:focus,
+  .link:hover {
+    border: none;
+    box-shadow: none;
+    border-color: none;
+    border-radius: 0;
+  }
+
+  .link:focus,
+  .link:hover {
+    border-bottom: 3px solid rgb(4, 67, 70);
+  }
+
   p {
     font-size: 10px;
     font-family: inherit;
